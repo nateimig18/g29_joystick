@@ -97,9 +97,13 @@ class g29_joystick:
         if self.G29_PID_PS4 not in [dev['product_id'] for dev in devices]:
             raise Exception('Logitech G29 NOT SET TO PS4 MODE!')
 
+    # TOOD: Rename to on change callback.
     def set_callback(self, input_code, callback_func):
         if input_code in self.ext_callbacks:
             self.ext_callbacks[input_code] = callback_func
+
+    # TODO: Add callbacks on update.
+    # TODO: Add callbacks on button press.
 
     def run(self):
         buff_prev = None
